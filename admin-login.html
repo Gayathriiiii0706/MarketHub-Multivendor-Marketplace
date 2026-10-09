@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MarketHub | Admin Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <div class="logo">
+                🛍️ Market<span>Hub</span>
+            </div>
+
+            <h2>Admin Login</h2>
+
+            <p>Login to access the Admin Dashboard</p>
+
+            <form id="adminLoginForm">
+
+                <div class="form-group">
+
+                    <label for="adminUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        placeholder="Enter admin username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter admin password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    style="width: 100%;"
+                >
+                    🔐 Login as Admin
+                </button>
+
+            </form>
+
+
+            <p id="adminLoginError"
+               style="color: red; margin-top: 15px;">
+            </p>
+
+
+            <a href="index.html"
+               style="display: block; margin-top: 20px;">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("adminLoginForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const username =
+                    document.getElementById("adminUsername").value;
+
+                const password =
+                    document.getElementById("adminPassword").value;
+
+                const errorMessage =
+                    document.getElementById("adminLoginError");
+
+
+                /*
+                 * Temporary admin login
+                 * We will connect this to Django authentication
+                 * after confirming the page works.
+                 */
+
+                if (username === "admin" && password === "admin123") {
+
+                    localStorage.setItem(
+                        "marketHubAdmin",
+                        "true"
+                    );
+
+                    window.location.href =
+                        "admin-dashboard.html";
+
+                } else {
+
+                    errorMessage.textContent =
+                        "Invalid admin username or password.";
+
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>

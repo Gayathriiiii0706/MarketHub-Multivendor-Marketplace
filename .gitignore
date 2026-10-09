@@ -1,0 +1,29 @@
+# Python virtual environments
+venv/
+.venv/
+backend/venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Editor settings
+.vscode/
+
+# Local database and temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Python cache files
+**/__pycache__/
+
+# Local databases
+*.sqlite3

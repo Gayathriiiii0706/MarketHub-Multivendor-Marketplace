@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - MarketHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <!-- Left Side -->
+        <div class="auth-info">
+            <div class="auth-logo">🛍️ MarketHub</div>
+
+            <h1>Welcome Back!</h1>
+
+            <p>
+                Login to discover amazing products
+                from trusted vendors.
+            </p>
+
+            <div class="auth-features">
+                <p>✓ Shop from multiple vendors</p>
+                <p>✓ Secure and easy shopping</p>
+                <p>✓ Track your orders</p>
+            </div>
+        </div>
+
+
+        <!-- Login Form -->
+        <div class="auth-form-container">
+
+            <div class="auth-form">
+
+                <h2>Login</h2>
+
+                <p class="auth-subtitle">
+                    Enter your account details
+                </p>
+
+
+                <!-- Role -->
+                <label>Login As</label>
+
+                <div class="role-options">
+
+                    <label class="role-card">
+                        <input type="radio"
+                               name="loginRole"
+                               value="customer"
+                               checked>
+
+                        <span>🛒</span>
+                        Customer
+                    </label>
+
+                    <label class="role-card">
+                        <input type="radio"
+                               name="loginRole"
+                               value="vendor">
+
+                        <span>🏪</span>
+                        Vendor
+                    </label>
+
+                </div>
+
+
+                <!-- Email -->
+                <label for="loginEmail">Email Address</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- Password -->
+                <label for="loginPassword">Password</label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button type="button"
+                            onclick="togglePassword('loginPassword', this)">
+                        👁️
+                    </button>
+
+                </div>
+
+
+                <!-- Remember -->
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+
+                    <a href="#" onclick="forgotPassword()">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <button class="auth-button"
+                        onclick="handleLogin()">
+                    Login
+                </button>
+
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="register.html">Create Account</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

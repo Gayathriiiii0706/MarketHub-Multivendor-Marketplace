@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | MarketHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            🛍️ Market<span>Hub</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#">Categories</a>
+            <a href="register.html">Become a Vendor</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="icon-btn" onclick="openSearch()">
+                🔍
+            </button>
+
+            <a href="cart.html" class="cart">
+                🛒
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+
+    <section class="products-header">
+
+        <p class="section-label">MARKETHUB STORE</p>
+
+        <h1>Explore Our Products</h1>
+
+        <p>
+            Discover products from multiple trusted vendors.
+        </p>
+
+    </section>
+
+
+    <!-- SEARCH & FILTER -->
+
+    <section class="filter-section">
+
+        <div class="product-search">
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="🔍 Search products..."
+                onkeyup="filterProducts()"
+            >
+
+        </div>
+
+
+        <div class="filters">
+
+            <select id="categoryFilter" onchange="filterProducts()">
+
+    <option value="all">
+        All Categories
+    </option>
+
+    <option value="electronics">
+        Electronics
+    </option>
+
+    <option value="fashion">
+        Fashion
+    </option>
+
+    <option value="bags">
+        Bags
+    </option>
+
+    <option value="home">
+        Home & Kitchen
+    </option>
+
+</select>
+
+            <select id="sortFilter" onchange="sortProducts()">
+
+                <option value="default">
+                    Sort By
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <main class="section">
+
+        <div id="productGrid" class="product-grid">
+            <!-- Products will be loaded from Django API -->
+        </div>
+        <p id="noProducts" style="display: none;">
+    No products found.
+       </p>
+
+            
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="logo">
+                    🛍️ Market<span>Hub</span>
+                </div>
+
+                <p>
+                    A multi-vendor marketplace connecting
+                    customers with trusted sellers.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Marketplace</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+
+            </div>
+
+            <div>
+
+                <h3>For Vendors</h3>
+
+                <a href="register.html">
+                    Become a Vendor
+                </a>
+
+                <a href="vendor-dashboard.html">
+                    Vendor Dashboard
+                </a>
+
+            </div>
+
+            <div>
+
+                <h3>Support</h3>
+
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MarketHub. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

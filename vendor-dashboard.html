@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Vendor Dashboard - MarketHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            🛍️ MarketHub
+        </div>
+
+        <div class="vendor-profile">
+
+            <span>🏪</span>
+
+            <div>
+                <strong id="vendorName">
+                    Vendor
+                </strong>
+
+                <small>
+                    Vendor Account
+                </small>
+            </div>
+
+            <button onclick="vendorLogout()">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="dashboard-sidebar">
+
+            <h3>Vendor Panel</h3>
+
+            <a href="#dashboard"
+               class="active">
+                📊 Dashboard
+            </a>
+
+            <a href="#products">
+                📦 My Products
+            </a>
+
+            <a href="#addProduct">
+                ➕ Add Product
+            </a>
+
+            <a href="#orders">
+                🛒 Orders
+            </a>
+
+            <a href="#profile">
+                👤 My Profile
+            </a>
+
+            <a href="index.html">
+                🏠 Visit Store
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="dashboard-title">
+
+                <div>
+                    <h1>Vendor Dashboard</h1>
+
+                    <p>
+                        Manage your store and products
+                    </p>
+                </div>
+
+                <button
+                    class="add-product-btn"
+                    onclick="showAddProduct()">
+
+                    + Add Product
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <section class="dashboard-stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📦
+                    </div>
+
+                    <div>
+                        <h3 id="totalProducts">
+                            8
+                        </h3>
+
+                        <p>Total Products</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🛒
+                    </div>
+
+                    <div>
+                        <h3>24</h3>
+
+                        <p>Total Orders</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💰
+                    </div>
+
+                    <div>
+                        <h3>₹18,450</h3>
+
+                        <p>Total Sales</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <h3>4.8</h3>
+
+                        <p>Store Rating</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <section id="products"
+                     class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>My Products</h2>
+
+                    <button onclick="showAddProduct()">
+                        + Add Product
+                    </button>
+
+                </div>
+
+
+                <div class="vendor-product-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="vendorProducts">
+
+                            <tr>
+
+                                <td>
+                                    🎧 Wireless Headphones
+                                </td>
+
+                                <td>
+                                    Electronics
+                                </td>
+
+                                <td>
+                                    ₹1,599
+                                </td>
+
+                                <td>
+                                    25
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="edit-btn"
+                                        onclick="editProduct(this)">
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteProduct(this)">
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    ⌚ Smart Watch
+                                </td>
+
+                                <td>
+                                    Electronics
+                                </td>
+
+                                <td>
+                                    ₹2,499
+                                </td>
+
+                                <td>
+                                    18
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="edit-btn"
+                                        onclick="editProduct(this)">
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteProduct(this)">
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    🎒 Travel Backpack
+                                </td>
+
+                                <td>
+                                    Fashion
+                                </td>
+
+                                <td>
+                                    ₹1,299
+                                </td>
+
+                                <td>
+                                    32
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="edit-btn"
+                                        onclick="editProduct(this)">
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteProduct(this)">
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD PRODUCT ================= -->
+
+            <section id="addProduct"
+                     class="dashboard-section add-product-section">
+
+                <div class="section-heading">
+
+                    <h2>Add New Product</h2>
+
+                </div>
+
+
+                <form id="productForm"
+                      onsubmit="addVendorProduct(event)">
+
+                      <input type="hidden"id="editProductId">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Product Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="productName"
+                                placeholder="Enter product name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Category
+                            </label>
+
+                            <select id="productCategory"
+                                    required>
+
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option>
+                                    Electronics
+                                </option>
+
+                                <option>
+                                    Fashion
+                                </option>
+
+                                <option>
+                                    Beauty
+                                </option>
+
+                                <option>
+                                    Home & Living
+                                </option>
+
+                                <option>
+                                    Sports
+                                </option>
+
+                                <option>
+                                    Books
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="productPrice"
+                                placeholder="₹ Enter price"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Stock
+                            </label>
+
+                            <input
+                                type="number"
+                                id="productStock"
+                                placeholder="Enter stock quantity"
+                                required
+                            >
+
+                        </div>
+                        <div class="form-group">
+
+    <label>
+        Product Image
+    </label>
+
+    <input
+        type="file"
+        id="productImage"
+        accept="image/*"
+    >
+
+    <small>
+        Upload a product image (JPG, PNG, JPEG)
+    </small>
+
+</div>
+
+
+                        <div class="form-group full-width">
+
+    <label>
+        Product Description
+    </label>
+
+    <textarea
+        id="productDescription"
+        rows="5"
+        placeholder="Describe your product..."
+        required>
+    </textarea>
+
+    <button
+        type="button"
+        class="edit-btn"
+        id="generateDescriptionBtn"
+        onclick="generateProductDescription()">
+
+        🤖 Generate Description with AI
+
+    </button>
+
+    <small>
+        AI will create a professional product description
+        using your product details.
+    </small>
+
+</div>
+
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="save-product-btn">
+
+                        💾 Save Product
+
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= ORDERS ================= -->
+
+            <section id="orders"
+                     class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>Recent Orders</h2>
+
+                </div>
+
+
+                <div class="orders-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="vendorOrders">
+
+                        </tbody>  
+                    
+                    
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PROFILE ================= -->
+
+            <section id="profile"
+                     class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>My Profile</h2>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        🏪
+                    </div>
+
+                    <div>
+
+                        <h3 id="profileVendorName">
+                            Vendor Store
+                        </h3>
+
+                        <p id="profileVendorEmail">
+                            vendor@markethub.com
+                        </p>
+
+                        <p>
+                            📍 Chennai, Tamil Nadu
+                        </p>
+                        <button id="editProfileBtn">
+                               ✏️ Edit Profile
+                        </button>
+
+                        <div id="editProfileForm" style="display: none;">
+
+    <input
+        type="text"
+        id="editFullName"
+        placeholder="Full Name"
+    >
+
+    <input
+        type="email"
+        id="editEmail"
+        placeholder="Email"
+    >
+
+    <input
+        type="text"
+        id="editPhone"
+        placeholder="Phone"
+    >
+
+    <input
+        type="text"
+        id="editBusinessName"
+        placeholder="Business Name"
+    >
+
+    <textarea
+        id="editBusinessAddress"
+        placeholder="Business Address"
+    ></textarea>
+
+    <button id="saveProfileBtn">
+        💾 Save Profile
+    </button>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+

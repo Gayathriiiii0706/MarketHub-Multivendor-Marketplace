@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Checkout - Market Hub</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head><body><header>
+    <h1>Market Hub</h1>
+</header>
+
+<main class="section">
+
+    <h2>Checkout</h2>
+
+    <div class="checkout-container">
+
+        <h3>Customer Details</h3>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Full Name"
+        >
+
+        <input
+            type="email"
+            id="customerEmail"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Phone Number"
+        >
+
+        <h3>Delivery Address</h3>
+
+        <textarea
+            id="deliveryAddress"
+            placeholder="Enter your delivery address"
+        ></textarea>
+
+        <h3>Payment Method</h3>
+
+        <label>
+            <input
+                type="radio"
+                name="payment"
+                value="cod"
+                checked
+            >
+            Cash on Delivery
+        </label>
+
+        <br><br>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+</main>
+
+<script src="js/main.js"></script>
+
+</body></html>

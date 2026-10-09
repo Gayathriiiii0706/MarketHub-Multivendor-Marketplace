@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - MarketHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <!-- Left Side -->
+        <div class="auth-info">
+
+            <div class="auth-logo">
+                🛍️ MarketHub
+            </div>
+
+            <h1>Join MarketHub</h1>
+
+            <p>
+                Create an account and start shopping
+                or selling your products.
+            </p>
+
+            <div class="auth-features">
+
+                <p>✓ Easy account creation</p>
+
+                <p>✓ Shop from trusted vendors</p>
+
+                <p>✓ Sell your products online</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Registration -->
+        <div class="auth-form-container">
+
+            <div class="auth-form">
+
+                <h2>Create Account</h2>
+
+                <p class="auth-subtitle">
+                    Choose your account type
+                </p>
+
+
+                <!-- Role -->
+                <div class="role-options">
+
+                    <label class="role-card">
+
+                        <input
+                            type="radio"
+                            name="registerRole"
+                            value="customer"
+                            checked
+                            onchange="toggleVendorFields()"
+                        >
+
+                        <span>🛒</span>
+
+                        Customer
+
+                    </label>
+
+
+                    <label class="role-card">
+
+                        <input
+                            type="radio"
+                            name="registerRole"
+                            value="vendor"
+                            onchange="toggleVendorFields()"
+                        >
+
+                        <span>🏪</span>
+
+                        Vendor
+
+                    </label>
+
+                </div>
+
+
+                <!-- Full Name -->
+                <label for="registerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <!-- Email -->
+                <label for="registerEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- Phone -->
+                <label for="registerPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    required
+                >
+
+
+                <!-- Vendor Fields -->
+                <div id="vendorFields"
+                     class="vendor-fields">
+
+                    <label for="shopName">
+                        Shop Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="shopName"
+                        placeholder="Enter your shop name"
+                    >
+
+
+                    <label for="businessCategory">
+                        Business Category
+                    </label>
+
+                    <select id="businessCategory">
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="electronics">
+                            Electronics
+                        </option>
+
+                        <option value="fashion">
+                            Fashion
+                        </option>
+
+                        <option value="beauty">
+                            Beauty
+                        </option>
+
+                        <option value="home">
+                            Home & Living
+                        </option>
+
+                        <option value="sports">
+                            Sports
+                        </option>
+
+                        <option value="books">
+                            Books
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Password -->
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        onclick="togglePassword('registerPassword', this)">
+                        👁️
+                    </button>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        onclick="togglePassword('confirmPassword', this)">
+                        👁️
+                    </button>
+
+                </div>
+
+
+                <!-- Terms -->
+                <label class="terms">
+
+                    <input type="checkbox"
+                           id="terms">
+
+                    I agree to the Terms & Conditions
+
+                </label>
+
+
+                <button
+                    class="auth-button"
+                    onclick="handleRegister()">
+
+                    Create Account
+
+                </button>
+
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

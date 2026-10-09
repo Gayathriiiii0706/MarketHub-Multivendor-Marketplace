@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details | MarketHub</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        🛍️ Market<span>Hub</span>
+    </div>
+
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="#">Categories</a>
+
+        <a href="register.html">Become a Vendor</a>
+
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-btn"
+                onclick="openSearch()">
+            🔍
+        </button>
+
+        <a href="cart.html"
+           class="cart">
+
+            🛒
+            <span id="cartCount">0</span>
+
+        </a>
+
+        <a href="login.html"
+           class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div id="searchBox"
+     class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+    >
+
+    <button onclick="closeSearch()">
+        ✕
+    </button>
+
+</div>
+
+
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="breadcrumb">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <span>›</span>
+
+    <a href="products.html">
+        Products
+    </a>
+
+    <span>›</span>
+
+    <span id="breadcrumbProduct">
+        Product
+    </span>
+
+</div>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<section class="product-details">
+
+
+    <!-- PRODUCT IMAGE -->
+
+    <div class="details-image">
+
+        <div class="main-product-image">
+
+            <img id="detailsProductImage"
+                 src=""
+                 alt="Product">
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCT INFORMATION -->
+
+    <div class="details-info">
+
+        <p class="vendor-name"
+           id="detailsVendor">
+            Vendor
+        </p>
+
+
+        <h1 id="detailsProductName">
+            Product
+        </h1>
+
+
+        <div class="details-rating">
+
+            <span>
+                ⭐⭐⭐⭐⭐
+            </span>
+
+            <span>
+                5.0
+            </span>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="details-price">
+
+            <strong id="detailsProductPrice">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <p class="tax-info">
+            Inclusive of all taxes
+        </p>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="description">
+
+            <h3>
+                Product Description
+            </h3>
+
+            <p id="detailsProductDescription">
+                Loading product description...
+            </p>
+
+        </div>
+
+
+        <!-- QUANTITY -->
+
+        <div class="quantity-section">
+
+            <h3>
+                Quantity
+            </h3>
+
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity()">
+                    −
+                </button>
+
+                <span id="quantity">
+                    1
+                </span>
+
+                <button onclick="increaseQuantity()">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="detail-buttons">
+
+            <button
+                class="buy-button"
+                onclick="buyNow()">
+
+                ⚡ Buy Now
+
+            </button>
+
+
+            <button
+    class="detail-cart-button"
+    onclick="addProductToCart(
+        currentProduct.id,
+        currentProduct.name,
+        currentProduct.price,
+        1,
+        currentProduct.image
+    )">
+
+    🛒 Add to Cart
+
+</button>
+
+        </div>
+
+
+        <!-- DELIVERY -->
+
+        <div class="delivery-box">
+
+            <div>
+
+                🚚
+
+                <strong>
+                    Free Delivery
+                </strong>
+
+                <p>
+                    Delivery available to your location
+                </p>
+
+            </div>
+
+
+            <div>
+
+                🔄
+
+                <strong>
+                    Easy Returns
+                </strong>
+
+                <p>
+                    Return within 7 days
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RELATED PRODUCTS ================= -->
+
+<section class="section related-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="section-label">
+                YOU MAY ALSO LIKE
+            </p>
+
+            <h2>
+                Related Products
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript will load real products here -->
+
+    <div class="product-grid">
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="logo">
+                🛍️ Market<span>Hub</span>
+            </div>
+
+            <p>
+                A multi-vendor marketplace connecting
+                customers with trusted sellers.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Marketplace
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                For Vendors
+            </h3>
+
+            <a href="register.html">
+                Become a Vendor
+            </a>
+
+            <a href="vendor-dashboard.html">
+                Vendor Dashboard
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 MarketHub. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
